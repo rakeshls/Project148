@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+  </head>
+    <body>
+    <a-scene>
+      <!--Loading 3D Images-->
+      <a-a-assets>
+        <a-asset-item id="bench" src="./assets/bench/scene.gltf"></a-asset-item>
+        <a-asset-item id="street" src="./assets/street/scene.gltf"></a-asset-item>
+        <a-asset-item id="lamp" src="./assets/lamp/scene.gltf"></a-asset-item>
+        <a-asset-item id="cat" src="./assets/cat/scene.gltf"></a-asset-item>
+        <a-asset-item id="girl" src="./assets/girl/scene.gltf"></a-asset-item>
+      </a-a-assets>
+      <!--Sounds-->
+      <a-entity sound="src: ./assets/sound/forest.mp3; autoplay: true; volume: 1"> </a-entity>
+      <!--Sky-->
+    <a-sky color="black"></a-sky>
+
+      <!--Background-->
+      <a-box
+        src="./assets/background.jpg"
+        position="0 12.48 -3.5"
+        width="30"
+        height="25"
+      >
+      </a-box>
+      <!--street-->
+      <a-entity shadow="receive:true;">
+        <a-entity scale="0.02 0.04 0.03" gltf-model="#street" position="0 0 -1" rotation="0 90 0"
+        ></a-entity>
+
+        <a-entity scale="0.02 0.04 0.03" gltf-model="#street" position="0 0 3" rotation="0 90 0"
+        ></a-entity>
+      </a-entity>
+
+      <!--Chair-->
+      <a-entity scale="2.9 2.9 2.9" gltf-model="#bench" position="-2 0.6 1" shadow="cast:true;"
+      ></a-entity>
+
+      <!--Lamp-->
+      <a-entity scale="2.66 2.66 2.66" gltf-model="#lamp" position="-10 0 0" shadow="cast:true;"
+      ></a-entity>
+
+      <!--Cat-->
+      <a-entity scale="0.2 0.2 0.2" gltf-model="#cat" position="3.4 0.6 3" rotation="0 40 0" shadow="cast:true;"
+      ></a-entity>
+      <!--Girl-->
+      <a-entity scale="3.99 3.99 3.99" gltf-model="#girl" position="0 0.6 3" 
+      rotation="0 40 0" shadow="cast:true;"></a-entity>
+
+      <!--Camera-->
+      <a-camera position="0 5 15">
+      </a-camera>
+
+      <!--Light-->
+      <a-entity position="-8 12.6 1.4"
+        light="type: point; castShadow: true; color: #e6ca14; intensity: 2.35"
+      >
+      </a-entity>
+      <a-entity light="type: ambient;"> </a-entity>
+    </a-scene>
+
+
+  </body>
+</html>
